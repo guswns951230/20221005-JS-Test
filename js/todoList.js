@@ -1,8 +1,9 @@
 const todoForm = document.querySelector("#todo-form");
-const inputText = document.querySelector("#input-text");
+const inputText = document.querySelector("#todo-form #input-text");
 const listContainer = document.querySelector("#list-container");
 const listCounter = document.querySelector("#list-counter");
 
+inputText.focus();
 todoForm.addEventListener("submit", onSubmitTodo);
 
 let count = 0;
@@ -20,7 +21,7 @@ function onSubmitTodo(e) {
 
   inputText.value = "";
   inputText.focus();
-  deleteBtn.innerHTML = "X";
+  deleteBtn.innerHTML = "✖";
 
   li.appendChild(checkbox);
   li.appendChild(textNode);
@@ -35,9 +36,11 @@ function todoCheck(e) {
   const li = e.target.parentNode;
   if (e.target.checked) {
     li.style.color = "lightGray";
+    li.style.textDecoration = "line-through";
     count++;
   } else {
     li.style.color = "white";
+    li.style.textDecoration = "none";
     count--;
   }
   console.log(count);
