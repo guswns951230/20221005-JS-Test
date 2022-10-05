@@ -37,7 +37,7 @@ function todoCheck(e) {
     li.style.color = "lightGray";
     count++;
   } else {
-    li.style.color = "black";
+    li.style.color = "white";
     count--;
   }
   console.log(count);
@@ -46,8 +46,9 @@ function todoCheck(e) {
 
 function todoDelete(e) {
   const li = e.target.parentNode;
+  const checkbox = li.firstChild;
   li.remove();
-  if (count > 0) {
+  if (checkbox.checked && count > 0) {
     count--;
     console.log(count);
     countList();
