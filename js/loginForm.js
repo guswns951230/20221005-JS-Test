@@ -4,6 +4,7 @@ const loginBtn = document.querySelector("#login-btn");
 const userTitle = document.querySelector("#user-title");
 
 loginForm.addEventListener("submit", onSubmitLogin);
+userInput.focus();
 
 function onSubmitLogin(e) {
   e.preventDefault();
